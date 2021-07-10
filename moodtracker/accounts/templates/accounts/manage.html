@@ -1,0 +1,18 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+  <h1>Hello, {{user.get_username}}!</h1>
+  <a href="{% url 'accounts:new' %}">How are you feeling today?</a>
+
+  <p>{{quote}}</p>
+  <p>{{location}}</p>
+
+  {% for mood in moods %}
+      <div class="mood item">
+          <h2><a>{{ mood.rating }}</a></h2>
+          <p>{{ mood.comment }}</p>
+      </div>
+  {% endfor %}
+
+
+{% endblock %}
