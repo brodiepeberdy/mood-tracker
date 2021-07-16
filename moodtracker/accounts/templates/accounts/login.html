@@ -4,10 +4,13 @@
   <h1>Login to continue tracking your mood.</h1>
   <form class="site-form" action="{% url 'accounts:login' %}" method="post">
     {% csrf_token %}
-    {{form}}
-    {% if request.GET.next %}
-      <input type="hidden" name="next" value="{{request.GET.next}}">
-    {% endif %}
-    <input type="submit" value="Login">
+    {% for field in form  %}
+      <div class="formsection">
+        <label><b>{{ field.label_tag }} </b></label>{{ field }}
+      </div>
+    {% endfor %}
+    <div class="formsection">
+      <label></label><input class="button" type="submit" value="Login">
+    </div>
   </form>
 {% endblock %}

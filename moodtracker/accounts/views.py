@@ -44,5 +44,6 @@ def logout_view(request):
 @login_required(login_url="/accounts/login/")
 def account_view(request):
     profile = UserProfile.objects.get(user=request.user)
-    moods = Mood.objects.all().filter(creator=request.user)
+    # Order moods by date in descending order, hence the most recent is first.
+    moods = Mood.objects.all().filter(creator=request.user).order_by('-date')
     return render(request, 'accounts/manage.html', {"quote": profile.quote, "location": profile.location, 'moods':moods})

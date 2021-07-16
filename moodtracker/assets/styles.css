@@ -59,7 +59,9 @@ nav {
 nav li {
   display: inline-block;
   list-style-type: none;
-  margin-left: 20px;
+  margin-left: 1em;
+  margin-right: 1em;
+
 }
 nav button {
   background: none;
@@ -82,55 +84,62 @@ nav button {
   transition-duration: 0.5s;
 }
 
+.m1 {
+  background-color: Salmon;
+}
+.m2 {
+  background-color: SandyBrown;
+}
+.m3 {
+  background-color: LemonChiffon;
+}
+.m4 {
+  background-color: LightGreen;
+}
+.m5 {
+  background-color: MediumSpringGreen;
+}
+.date {
+  text-align: right;
+}
 .mood h2{
   font-size: 1.5em;
 }
 
-.mood .author{
-  padding: 10px;
-  background: #00dba0;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  color: #0f121f;
+.buttons{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  margin: 50px;
 }
-
-.book-detail .book{
-  padding: 0;
-}
-
-.book-detail  .mood img{
-  max-width: 100%;
-}
-
-.book-detail  .mood h2{
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 1.5em;
+  cursor: pointer;
   text-align: center;
-  margin: 20px auto;
-  font-size: 2em
-}
-
-.book-detail .mood h3{
-  text-align: center;
-}
-
-.book-detail  .mood p{
-  margin: 10px 20px
-}
-
-.site-form {
-  padding: 1em;
-  border-radius: 25px;
-  border: 3px solid DarkGrey;
-  background-color: Khaki;
+  text-decoration: none;
   color: #424242;
+  background-color: Khaki;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
-.site-form input, .site-form textarea{
-  display: block;
-  margin: 20px 0 0px 0;
-  padding: 10px;
+.button:hover {
+  background-color: Gold;
+  color: Black;
 }
+
+.button:active {
+  background-color: Gold;
+  color: Black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
 
 a.highlight{
   border: 1px solid #00dba0;
@@ -158,13 +167,38 @@ a.highlight{
   padding: 0;
 }
 
+
+.site-form {
+  padding: 1em;
+  border-radius: 25px;
+  border: 3px solid DarkGrey;
+  background-color: Khaki;
+  color: #424242;
+}
+.site-form input, .site-form textarea{
+  display: block;
+  margin: 20px 0 0px 0;
+  padding: 10px;
+}
 .site-form input[type="submit"]{
-  background: #00dba0;
+  background: #FFD700;
   border: 0;
-  color: #fff;
+  color: Black;
   font-size: 20px;
   border-radius: 4px;
-  margin: 10px 0;
+  margin: 0;
+  width: 100%;
+}
+.site-form input[type="submit"]:hover {
+  background-color: #d4b200;
+}
+.formsection {
+  display:table-row;
+  align-items: center;
+}
+.formsection label {
+  display: table-cell;
+  padding: 1em;
 }
 
 .selectbutton {

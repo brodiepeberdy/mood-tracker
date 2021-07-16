@@ -2,17 +2,23 @@
 
 {% block content %}
   <h1>Hello, {{user.get_username}}!</h1>
-  <a href="{% url 'accounts:new' %}">How are you feeling today?</a>
+  <!-- <h2>{{quote}}</h2> -->
 
-  <p>{{quote}}</p>
-  <p>{{location}}</p>
+  <div class="buttons">
+    <a class="button" href="{% url 'accounts:new' %}">Forgot to track a day?</a>
+    <a class="button" href="{% url 'accounts:today' %}">How are you feeling today?</a>
+  </div>
 
-  {% for mood in moods %}
-      <div class="mood item">
-          <h2><a>{{ mood.rating }}</a></h2>
-          <p>{{ mood.comment }}</p>
-      </div>
-  {% endfor %}
+  <div class="moods">
+    {% for mood in moods %}
+        <div class="mood item m{{mood.rating}}">
+            <h3 class="date">{{ mood.date }}</h3>
+            <h4>{{ mood.comment }}</h4>
+            <p>{{ mood.positives }}</p>
+            <p>{{ mood.negatives }}</p>
+        </div>
+    {% endfor %}
+  </div>
 
 
 {% endblock %}

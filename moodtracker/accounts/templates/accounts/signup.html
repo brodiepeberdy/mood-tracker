@@ -4,7 +4,13 @@
   <h1>Signup to start tracking your mood daily.</h1>
   <form class="site-form" action="/accounts/signup/" method="post">
     {% csrf_token %}
-    {{form}}
-    <input type="submit" value="signup">
+    {% for field in form  %}
+      <div class="formsection">
+        <label><b>{{ field.label_tag }} </b></label>{{ field }}
+      </div>
+    {% endfor %}
+    <div class="formsection">
+      <label></label><input class="button" type="submit" value="Sign Up">
+    </div>
   </form>
 {% endblock %}
