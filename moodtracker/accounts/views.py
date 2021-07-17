@@ -7,6 +7,7 @@ from .models import UserProfile
 from moods.models import Mood
 from django.shortcuts import redirect
 from django.contrib.auth import login, logout
+import requests
 
 # Create your views here.
 
@@ -46,4 +47,6 @@ def account_view(request):
     profile = UserProfile.objects.get(user=request.user)
     # Order moods by date in descending order, hence the most recent is first.
     moods = Mood.objects.all().filter(creator=request.user).order_by('-date')
-    return render(request, 'accounts/manage.html', {"quote": profile.quote, "location": profile.location, 'moods':moods})
+    # Retrieves a random quote from ZenQuotes.io
+    response = requests.get("https://zenquotes.io/api/random")
+    return render(request, 'accounts/manage.html', {"quote": profile.quote, "location": profile.location, "moods":moods, "quote": response.json()[0]})

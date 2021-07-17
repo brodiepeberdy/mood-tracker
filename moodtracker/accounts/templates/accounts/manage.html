@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Hello, {{user.get_username}}!</h1>
-  <!-- <h2>{{quote}}</h2> -->
+  <h2><b>"{{quote.q}}"</b><br/><i> - {{quote.a}}</i></h2>
 
   <div class="buttons">
     <a class="button" href="{% url 'accounts:new' %}">Forgot to track a day?</a>
@@ -12,8 +12,10 @@
   <div class="moods">
     {% for mood in moods %}
         <div class="mood item m{{mood.rating}}">
-            <h3 class="date">{{ mood.date }}</h3>
-            <h4>{{ mood.comment }}</h4>
+            <h3 class="date"><b>{{ mood.date }}</b></h3>
+            <a href="{% url 'accounts:delete' mood.id %}" class="mood-icons"><i class="fa fa-trash"></i></a>
+            <a href="{% url 'accounts:edit' mood.id %}" class="mood-icons"><i class="fa fa-edit"></i></a>
+            <h4><b>{{ mood.comment }}</b></h4>
             <p>{{ mood.positives }}</p>
             <p>{{ mood.negatives }}</p>
         </div>

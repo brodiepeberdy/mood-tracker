@@ -13,4 +13,6 @@ urlpatterns = [
     path('account/', views.account_view, name="account"),
     path('new/', moods_views.new_view, name="new"),
     path('today/', moods_views.today_view, name="today"),
+    path('delete/<int:id>/', moods_views.delete_view, name="delete"),
+    path('edit/<int:id>/', moods_views.edit_view, name="edit"),
 ]

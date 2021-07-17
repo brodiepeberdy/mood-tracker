@@ -10,3 +10,8 @@ class TodayMood(forms.ModelForm):
     class Meta:
         model = models.Mood
         fields = ['rating', 'comment', 'positives', 'negatives']
+
+class EditMood(forms.ModelForm):
+    class Meta:
+        model = models.Mood
+        fields = ['rating', 'comment', 'positives', 'negatives']

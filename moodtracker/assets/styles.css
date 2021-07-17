@@ -6,7 +6,7 @@
 
 body{
   margin: 0;
-  background: White;
+  background: #fcfced;
   color: Black;
   font-family: 'Roboto', sans-serif;
 }
@@ -25,10 +25,16 @@ a, a:hover, a:visited{
   margin: 0 auto;
 }
 
-div.wrapper > h1{
+div.wrapper > h1 {
   text-align: center;
   margin: 50px auto;
   font-size: 3em
+}
+
+div.wrapper > h2 {
+  text-align: center;
+  margin: 50px auto;
+  font-size: 2em
 }
 
 header{
@@ -70,6 +76,29 @@ nav button {
   font-size: 16px;
 }
 
+footer{
+  display: grid;
+  padding: 0;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 25px 25px 0 0;
+  border: 3px solid DarkGrey;
+  border-bottom: none;
+  background-color: Khaki;
+  color: #424242;
+}
+
+footer a {
+  color: #424242;
+}
+footer a:hover {
+  color: Black; /* Bright Purple*/
+}
+footer.wrapper > h1{
+  font-size: 3em;
+}
+
 .moods{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -104,6 +133,12 @@ nav button {
 }
 .mood h2{
   font-size: 1.5em;
+}
+.mood-icons {
+  color: Black;
+  float: right;
+  font-size: 2em;
+  padding: 0.5em;
 }
 
 .buttons{
@@ -174,6 +209,8 @@ a.highlight{
   border: 3px solid DarkGrey;
   background-color: Khaki;
   color: #424242;
+  margin-bottom: 2em;
+
 }
 .site-form input, .site-form textarea{
   display: block;
